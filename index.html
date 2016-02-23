@@ -40,12 +40,25 @@
   <!-- Stylesheets -->
   <link rel="stylesheet" href="styles/main.css">
 
+  <!-- Inline script -->
+  <script type="text/javascript">
+    window.Polymer = {dom: 'shadow'};
+  </script>
+
   <!-- Polymer import -->
   <script src="bower_components/webcomponentsjs/webcomponents-lite.js"></script>
+  <link rel="import" href="bower_components/polymer/polymer.html">
+
+  <!-- Other imports -->
+  <link rel="import" href="./elements/elements.html">
 </head>
 
 <body unresolved>
-  <h1>Testing 123!</h1>
+
+  <site-container>
+    <h1>Testing 123!</h1>
+  </site-container>
+
 </body>
 
 </html>
