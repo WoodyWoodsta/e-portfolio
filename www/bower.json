@@ -1,0 +1,22 @@
+{
+  "name": "ePortfolio",
+  "homepage": "http://woodywoodsta.github.io/e-portfolio",
+  "authors": [
+    "WoodyWoodsta <woodywoodsta@gmail.com>"
+  ],
+  "description": "My online portfolio",
+  "main": "index.html",
+  "moduleType": [],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "polymer": "Polymer/polymer#^1.2.0"
+  }
+}
