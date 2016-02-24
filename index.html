@@ -72,22 +72,9 @@
       transition: margin 0.3s ease-in-out;
     }
 
-    paper-tabs {
-      --paper-tabs-selection-bar-color: rgb(56,95,176);
-    }
-
-    #tabsWrapper {
-      @apply(--layout-horizontal);
-    }
-
-    #tabsWrapper > div {
-      @apply(--layout-flex);
-    }
-
     @media all and (max-width: 700px) {
       site-header {
-        margin-top: 0;
-        transition: none;
+        margin: 0;
       }
     }
 
@@ -98,15 +85,7 @@
 
   <site-container>
     <site-header></site-header>
-    <div id="tabsWrapper">
-      <div></div>
-      <paper-tabs selected="0" noink justify="center">
-        <paper-tab>HOMEPAGE</paper-tab>
-        <paper-tab>CV</paper-tab>
-        <paper-tab>SOCIAL</paper-tab>
-      </paper-tabs>
-      <div></div>
-    </div>
+    <site-content></site-content>
   </site-container>
 
 </body>

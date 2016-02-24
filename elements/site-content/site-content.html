@@ -1,0 +1,41 @@
+<dom-module id="site-content">
+  <template>
+    <style>
+      paper-toolbar {
+        --paper-toolbar-background: var(--transparent);
+        --paper-toolbar-color: var(--dark-strong-alpha);
+      }
+
+      paper-tabs {
+        --paper-tabs-selection-bar-color: var(--dark-strong-alpha);
+      }
+    </style>
+
+    <paper-toolbar justify="center">
+      <paper-tabs attr-for-selected="index" selected="{{pageSelection}}" noink>
+        <paper-tab index="homepage">HOMEPAGE</paper-tab>
+        <paper-tab index="cv">CV</paper-tab>
+        <paper-tab index="social">SOCIAL</paper-tab>
+      </paper-tabs>
+    </paper-toolbar>
+
+    <iron-pages attr-for-selected="index" selected="{{pageSelection}}">
+      <section index="homepage"><div style="height: 500px;">1</div></section>
+      <section index="cv"><div style="height: 500px;">2</div></section>
+      <section index="social"><div style="height: 500px;">3</div></section>
+    </iron-pages>
+
+  </template>
+  <script>
+    Polymer({
+      is: 'site-content',
+
+      properties: {
+        pageSelection: {
+          type: String,
+          value: 'homepage'
+        }
+      }
+    });
+  </script>
+</dom-module>
