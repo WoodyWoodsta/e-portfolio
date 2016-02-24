@@ -63,8 +63,6 @@
       background: var(--light-strong);
     }
     site-container {
-      @apply(--layout-vertical);
-
       margin-top: 20px;
     }
 
@@ -72,6 +70,18 @@
       margin-top: 50px;
 
       transition: margin 0.3s ease-in-out;
+    }
+
+    paper-tabs {
+      --paper-tabs-selection-bar-color: rgb(56,95,176);
+    }
+
+    #tabsWrapper {
+      @apply(--layout-horizontal);
+    }
+
+    #tabsWrapper > div {
+      @apply(--layout-flex);
     }
 
     @media all and (max-width: 700px) {
@@ -88,9 +98,15 @@
 
   <site-container>
     <site-header></site-header>
-    <!-- <div style="height: 1000px; width: 800px; background: rgb(217,217,217);">
-
-    </div> -->
+    <div id="tabsWrapper">
+      <div></div>
+      <paper-tabs selected="0" noink justify="center">
+        <paper-tab>HOMEPAGE</paper-tab>
+        <paper-tab>CV</paper-tab>
+        <paper-tab>SOCIAL</paper-tab>
+      </paper-tabs>
+      <div></div>
+    </div>
   </site-container>
 
 </body>
