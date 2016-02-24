@@ -3,11 +3,22 @@
     <style>
       :host {
         display: block;
+        overflow: hidden;
         max-width: 800px;
         margin: auto;
-        border: 1px solid grey;
+        /*border: 1px solid grey;*/
         border-radius: 2px;
       }
+
+      #siteContainer {
+        @apply(--layout-vertical);
+        @apply(--layout-center);
+      }
+
+      #siteContainer > ::content [content] {
+        margin: 20px;
+      }
+
     </style>
 
     <div id="siteContainer">

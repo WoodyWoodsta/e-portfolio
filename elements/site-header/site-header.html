@@ -1,0 +1,95 @@
+<dom-module id="site-header">
+  <template>
+    <style>
+      :host {
+        @apply(--layout-horizontal);
+        @apply(--layout-center-justified);
+        @apply(--layout-center);
+        @apply(--layout-self-stretch);
+
+        padding: 20px;
+        /*background: var(--dark-strong);*/
+        color: var(--dark-strong-alpha);
+        border-radius: 4px;
+        -moz-user-select: -moz-none;
+        -khtml-user-select: none;
+        -webkit-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+      }
+
+      #headerProfileImage {
+        @apply(--layout-self-center);
+
+        height: 150px;
+        width: 150px;
+        border-radius: 50%;
+        overflow: hidden;
+      }
+
+      #headerProfileImage > img {
+        width: 150px;
+        height: 150px;
+      }
+
+      .code,
+      .codeHeader {
+        font-family: 'Roboto Mono';
+        font-size: 1.1rem;
+      }
+
+      .code .function {
+        color: rgb(19,89,181);
+      }
+
+      .code .string {
+        color: rgb(221,114,25);
+      }
+
+      .code > span {
+        opacity: 0.2;
+
+        transition: opacity 0.2s ease-in-out;
+      }
+
+      #headerText:hover > span {
+        opacity: 1;
+      }
+
+      .codeHeader {
+        opacity: 1;
+        font-size: 3.5rem;
+        line-height: normal;
+      }
+
+      #headerText {
+        margin-left: 25px;
+      }
+
+      @media all and (max-width: 700px) {
+        :host {
+          @apply(--layout-vertical);
+        }
+
+        #headerProfileImage {
+          margin-bottom: 25px;
+        }
+      }
+
+    </style>
+
+    <div id="headerProfileImage">
+      <img src="../../resources/siteHeadShot.png"/>
+    </div>
+    <div id="headerText" class="code">
+      <span>> const name = </span><span class="string">'Sean Wood'</span><span>;<br>> console.</span><span class="function">log(</span><span class="string">`hi, my name is\n${name}`</span><span class="function">)</span><span>;</span><br>
+      <div class="codeHeader">
+        <span class="codeHeader">> hi, my name is<br>Sean Wood</span>
+      </div>
+      <span>> window.</span><span class="function">startOnlinePortfolio()</span><span>;</span><br>
+      <span>> </span><span>_</span>
+    </div>
+
+  </template>
+  <script src="./site-header.js" charset="utf-8"></script>
+</dom-module>
