@@ -1,3 +1,6 @@
+<!-- element imports -->
+<link rel="import" href="../site-header-bar/site-header-bar.html">
+
 <dom-module id="site-header">
   <template>
     <style>
@@ -5,12 +8,12 @@
         @apply(--layout-horizontal);
         @apply(--layout-center-justified);
         @apply(--layout-center);
-        @apply(--layout-self-stretch);
+        /*@apply(--layout-self-stretch);*/
 
-        padding: 20px;
-        /*background: var(--dark-strong);*/
-        color: var(--dark-strong-alpha);
-        border-radius: 4px;
+        height: 100vh;
+        background: var(--dark-strong);
+        color: var(--light-strong-alpha);
+
         -moz-user-select: -moz-none;
         -khtml-user-select: none;
         -webkit-user-select: none;
@@ -18,8 +21,21 @@
         user-select: none;
       }
 
+      #siteHeaderBar {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+      }
+
+      #headerContent {
+        @apply(--layout-horizontal);
+        @apply(--layout-center-justified);
+        @apply(--layout-center);
+      }
+
       #headerProfileImage {
-        @apply(--layout-self-end);
+        @apply(--layout-self-center);
 
         height: 150px;
         width: 150px;
@@ -39,11 +55,11 @@
       }
 
       .code .function {
-        color: rgb(19,89,181);
+        color: rgb(77,139,222);
       }
 
       .code .string {
-        color: rgb(221,114,25);
+        color: rgb(222,149,88);
       }
 
       .code > span {
@@ -84,7 +100,7 @@
       }
 
       @media all and (max-width: 700px) {
-        :host {
+        #headerContent {
           @apply(--layout-vertical);
         }
 
@@ -140,16 +156,20 @@
       }
     </style>
 
-    <div id="headerProfileImage">
-      <img src="../../resources/siteHeadShot.png"/>
-    </div>
-    <div id="headerText" class="code">
-      <span>> window.</span><span class="function">startOnlinePortfolio()</span><span>;</span><br>
-      <span>> const name = </span><span class="string">'Sean Wood'</span><span>;<br>> console.</span><span class="function">log(</span><span class="string">`hi, my name is\n${name}`</span><span class="function">)</span><span>;</span><br>
-      <div class="codeHeader">
-        <span class="codeHeader">> hi, my name is<br>Sean Wood</span><span id="headerCursor" class="codeHeader blink-text">_</span>
+    <div id="headerContent">
+      <div id="headerProfileImage">
+        <img src="../../resources/siteHeadShot.png"/>
+      </div>
+      <div id="headerText" class="code">
+        <span>> window.</span><span class="function">startOnlinePortfolio()</span><span>;</span><br>
+        <span>> const name = </span><span class="string">'Sean Wood'</span><span>;<br>> console.</span><span class="function">log(</span><span class="string">`hi, my name is\n${name}`</span><span class="function">)</span><span>;</span><br>
+        <div class="codeHeader">
+          <span class="codeHeader">> hi, my name is<br>Sean Wood</span><span id="headerCursor" class="codeHeader blink-text">_</span>
+        </div>
       </div>
     </div>
+
+    <site-header-bar id="siteHeaderBar"></site-header-bar>
 
   </template>
   <script src="./site-header.js" charset="utf-8"></script>

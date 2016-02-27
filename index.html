@@ -11,14 +11,14 @@
 
   <!-- === Progressive App Setup -->
   <!-- Chrome for Android theme color -->
-  <meta name="theme-color" content="#2E3AA1">
+  <meta name="theme-color" content="#3F51B5">
 
   <!-- Web Application Manifest -->
   <!-- TODO: Include a progressive manifest file -->
   <!-- <link rel="manifest" href="manifest.json"> -->
 
   <!-- Tile color for Win8 -->
-  <meta name="msapplication-TileColor" content="#3372DF">
+  <meta name="msapplication-TileColor" content="#3F51B5">
 
   <!-- Add to homescreen for Chrome on Android -->
   <meta name="mobile-web-app-capable" content="yes">
@@ -28,7 +28,7 @@
 
   <!-- Add to homescreen for Safari on iOS -->
   <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="apple-mobile-web-app-status-bar-style" content="#3F51B5">
   <meta name="apple-mobile-web-app-title" content="Sean Wood | ePortfolio">
   <!-- TODO: Include an apple icon (really?) -->
   <!-- <link rel="apple-touch-icon" href="images/touch/apple-touch-icon.png"> -->
@@ -62,13 +62,8 @@
     body {
       background: var(--light-strong);
     }
-    site-container {
-      margin-top: 20px;
-    }
 
     site-header {
-      margin-top: 50px;
-
       transition: margin 0.3s ease-in-out;
     }
 
@@ -85,7 +80,7 @@
 
   <site-container>
     <site-header></site-header>
-    <site-content></site-content>
+    <site-content content></site-content>
   </site-container>
 
 </body>

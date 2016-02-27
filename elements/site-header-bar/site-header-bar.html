@@ -1,0 +1,62 @@
+<dom-module id="site-header-bar">
+  <template>
+    <style>
+      #siteHeaderBarWrapper {
+        @apply(--layout-horizontal);
+      }
+
+      paper-toolbar {
+        @apply(--layout-flex);
+        background: #3F51B5;
+        --paper-toolbar-color: var(--light-strong-alpha);
+
+        transition: background 0.3s ease-in-out;
+      }
+
+      paper-tabs {
+        --paper-tabs-selection-bar-color: var(--light-strong-alpha);
+      }
+
+      .title {
+        font-family: 'Roboto Mono', monospace !important;
+      }
+
+      #imageWrapper {
+        height: 80px;
+        width: 80px;
+        overflow: hidden;
+        border-radius: 50%;
+        margin-right: 15px;
+
+        -webkit-box-shadow: 0 0 33px -5px rgba(0,0,0,0.75);
+        -moz-box-shadow: 0 0 33px -5px rgba(0,0,0,0.75);
+        box-shadow: 0 0 33px -5px rgba(0,0,0,0.75);
+      }
+
+      img {
+        height: 80px;
+        width: 80px;
+      }
+    </style>
+
+    <div id="siteHeaderBarWrapper">
+
+
+      <paper-toolbar justify="center">
+        <div id="imageWrapper">
+          <img src="../../resources/siteHeadShot.png"/>
+        </div>
+        <div class="title">
+          <span>window.e-portfolio</span>
+        </div>
+        <paper-tabs attr-for-selected="index" selected="{{pageSelection}}" noink>
+          <paper-tab index="homepage">HOMEPAGE</paper-tab>
+          <paper-tab index="cv">CV</paper-tab>
+          <paper-tab index="social">SOCIAL</paper-tab>
+        </paper-tabs>
+      </paper-toolbar>
+    </div>
+
+  </template>
+  <script src="site-header-bar.js" charset="utf-8"></script>
+</dom-module>
