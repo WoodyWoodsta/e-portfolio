@@ -63,13 +63,15 @@
       background: var(--light-strong);
     }
 
-    site-header {
-      transition: margin 0.3s ease-in-out;
+    @media screen and (orientation:portrait) and (max-width: 480px) {
+      #siteHeader {
+        height: 400px;
+      }
     }
 
-    @media all and (max-width: 700px) {
-      site-header {
-        margin: 0;
+    @media screen and (orientation:landscape) and (max-width: 840px) {
+      #siteHeader {
+        height: 600px;
       }
     }
 
@@ -79,7 +81,7 @@
 <body unresolved>
 
   <site-container>
-    <site-header></site-header>
+    <site-header id="siteHeader"></site-header>
     <site-content content></site-content>
   </site-container>
 

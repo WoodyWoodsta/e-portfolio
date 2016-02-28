@@ -2,7 +2,7 @@
   <template>
     <style>
       #siteHeaderBarWrapper {
-        @apply(--layout-horizontal);
+        /*@apply(--layout-horizontal);*/
       }
 
       paper-toolbar {
@@ -22,6 +22,8 @@
       }
 
       #imageWrapper {
+        @apply(--layout-flex-none);
+
         height: 80px;
         width: 80px;
         overflow: hidden;
@@ -37,24 +39,66 @@
         height: 80px;
         width: 80px;
       }
+
+      #tabsWrapper {
+        @apply(--layout-flex-none);
+        text-align: right;
+        position: relative;
+        width: 220px;
+      }
+
+      a paper-icon-button,
+      a:active paper-icon-button,
+      a:visited paper-icon-button {
+        color: var(--light-strong-alpha);
+      }
+
+      @media all and (max-width: 570px) {
+        #tabsWrapper {
+          width: 220px;
+        }
+
+        .title > span {
+          display: none;
+        }
+      }
+
+      @media all and (max-width: 480px) {
+        img,
+        #imageWrapper {
+          height: 70px;
+          width: 70px;
+        }
+
+        #tabsWrapper {
+          width: 220px;
+        }
+      }
+
     </style>
 
     <div id="siteHeaderBarWrapper">
 
 
-      <paper-toolbar justify="center">
+      <paper-toolbar>
         <div id="imageWrapper">
           <img src="../../resources/siteHeadShot.png"/>
         </div>
         <div class="title">
-          <span>window.e-portfolio</span>
+          <span>me.e-portfolio</span>
         </div>
-        <paper-tabs attr-for-selected="index" selected="{{pageSelection}}" noink>
-          <paper-tab index="homepage">HOMEPAGE</paper-tab>
-          <paper-tab index="cv">CV</paper-tab>
-          <paper-tab index="social">SOCIAL</paper-tab>
-        </paper-tabs>
+        <div id="tabsWrapper">
+          <paper-tabs attr-for-selected="index" selected="{{pageSelection}}" noink scrollable hide-scroll-buttons>
+            <paper-tab index="homepage">HOMEPAGE</paper-tab>
+            <paper-tab index="cv">CV</paper-tab>
+            <paper-tab index="social">SOCIAL</paper-tab>
+          </paper-tabs>
+        </div>
+        <a target="_blank" href="https://twitter.com/woodywoodsta"><paper-icon-button icon="mdi:twitter"></paper-icon-button></a>
+        <a target="_blank" href="https://za.linkedin.com/in/woodywoodsta"><paper-icon-button icon="mdi:linkedin"></paper-icon-button></a>
+        <a target="_blank" href="https://github.com/WoodyWoodsta"><paper-icon-button icon="mdi:github-circle"></paper-icon-button></a>
       </paper-toolbar>
+
     </div>
 
   </template>
