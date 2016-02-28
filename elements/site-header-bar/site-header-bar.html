@@ -17,7 +17,13 @@
         --paper-tabs-selection-bar-color: var(--light-strong-alpha);
       }
 
-      .title {
+      .my-title {
+        @apply(--layout-flex);
+
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        margin-left: 0 !important;
         font-family: 'Roboto Mono', monospace !important;
       }
 
@@ -58,7 +64,7 @@
           width: 220px;
         }
 
-        .title > span {
+        .my-title > span {
           display: none;
         }
       }
@@ -84,7 +90,7 @@
         <div id="imageWrapper">
           <img src="../../resources/siteHeadShot.png"/>
         </div>
-        <div class="title">
+        <div class="my-title">
           <span>me.e-portfolio</span>
         </div>
         <div id="tabsWrapper">
