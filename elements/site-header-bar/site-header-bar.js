@@ -6,7 +6,11 @@ Polymer({
       type: Number,
       value: 0,
       observer: '_onPositionTopChanged'
-    }
+    },
+  },
+
+  attached() {
+    this.fire('iron-activate', {selected: 'homepage'});
   },
 
   _onPositionTopChanged(newValue) {

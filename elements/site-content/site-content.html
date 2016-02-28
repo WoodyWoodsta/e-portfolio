@@ -1,12 +1,17 @@
 <dom-module id="site-content">
   <template>
     <style>
+      :host {
+        width: 100%;
+      }
+
       iron-pages {
+        margin: 30px auto 0 auto;
         max-width: 800px;
       }
     </style>
 
-    <iron-pages attr-for-selected="index" selected="{{pageSelection}}">
+    <iron-pages attr-for-selected="index" selected={{pageSelected}}>
       <section index="homepage"><div style="height: 500px;">1</div></section>
       <section index="cv"><div style="height: 500px;">2</div></section>
       <section index="social"><div style="height: 500px;">3</div></section>
@@ -18,10 +23,8 @@
       is: 'site-content',
 
       properties: {
-        pageSelection: {
-          type: String,
-          value: 'homepage'
-        }
+        pageSelected: String,
+        computed: 'computePageSelected(window.pageSelected)'
       }
     });
   </script>

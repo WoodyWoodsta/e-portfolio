@@ -10,9 +10,13 @@ Polymer({
 
     _headerHeight: {
       type: Number
+    },
+
+    pageSelected: {
+      type: String,
     }
   },
-
+  
   attached() {
     window.addEventListener('scroll', this._onScroll.bind(this));
     this._updateHeaderBarStyle();
