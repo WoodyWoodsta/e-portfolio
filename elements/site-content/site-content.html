@@ -7,12 +7,12 @@
 
       iron-pages {
         margin: 30px auto 0 auto;
-        max-width: 800px;
+        max-width: 700px;
       }
     </style>
 
     <iron-pages attr-for-selected="index" selected={{pageSelected}}>
-      <section index="homepage"><div style="height: 500px;">1</div></section>
+      <section index="homepage"><page-homepage></page-homepage></section>
       <section index="cv"><div style="height: 500px;">2</div></section>
       <section index="social"><div style="height: 500px;">3</div></section>
     </iron-pages>
