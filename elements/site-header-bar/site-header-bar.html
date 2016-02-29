@@ -10,7 +10,7 @@
         background: #3F51B5;
         --paper-toolbar-color: var(--light-strong-alpha);
 
-        transition: background 0.3s ease-in-out;
+        /*transition: background 0.3s ease-in-out;*/
       }
 
       paper-tabs {
@@ -83,6 +83,10 @@
         #tabsWrapper {
           width: 220px;
         }
+
+        .social-button {
+          display: none;
+        }
       }
 
     </style>
@@ -90,11 +94,11 @@
     <div id="siteHeaderBarWrapper">
 
 
-      <paper-toolbar>
+      <paper-toolbar id="siteHeaderToolbar">
         <div id="imageWrapper">
           <img src="../../resources/siteHeadShot.png"/>
         </div>
-        <div class="my-title">
+        <div id="siteTitle" class="my-title">
           <span>{{titleText}}</span>
         </div>
         <div id="tabsWrapper">
@@ -104,9 +108,9 @@
             <paper-tab index="social">SOCIAL</paper-tab>
           </paper-tabs>
         </div>
-        <a target="_blank" href="https://twitter.com/woodywoodsta"><paper-icon-button icon="mdi:twitter"></paper-icon-button></a>
-        <a target="_blank" href="https://za.linkedin.com/in/woodywoodsta"><paper-icon-button icon="mdi:linkedin"></paper-icon-button></a>
-        <a target="_blank" href="https://github.com/WoodyWoodsta"><paper-icon-button icon="mdi:github-circle"></paper-icon-button></a>
+        <a class="social-button" target="_blank" href="https://twitter.com/woodywoodsta"><paper-icon-button icon="mdi:twitter"></paper-icon-button></a>
+        <a class="social-button" target="_blank" href="https://za.linkedin.com/in/woodywoodsta"><paper-icon-button icon="mdi:linkedin"></paper-icon-button></a>
+        <a class="social-button" target="_blank" href="https://github.com/WoodyWoodsta"><paper-icon-button icon="mdi:github-circle"></paper-icon-button></a>
       </paper-toolbar>
 
     </div>

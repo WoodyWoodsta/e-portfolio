@@ -16,7 +16,7 @@ Polymer({
       type: String,
     }
   },
-  
+
   attached() {
     window.addEventListener('scroll', this._onScroll.bind(this));
     this._updateHeaderBarStyle();
@@ -44,9 +44,16 @@ Polymer({
     var pos = headerBarBottom - this._headerBarHeight;
     this._updateHeights();
 
-    this.$.siteHeaderBar.style.opacity = `${1 - 3*((this._headerHeight - this._headerBarHeight) - window.scrollY)/(this._headerHeight - this._headerBarHeight)}`;
+    var toolbar = this.$.siteHeaderBar.$.siteHeaderToolbar;
+    var image = this.$.siteHeaderBar.$.imageWrapper;
+    var title = this.$.siteHeaderBar.$.siteTitle;
 
-    this.$.siteHeaderBar.positionTop = (pos <= 0) ? 0 : pos;
+    var opacity = 1 - 3*((this._headerHeight - this._headerBarHeight) - window.scrollY)/(this._headerHeight - this._headerBarHeight);
+
+    image.style.opacity = title.style.opacity = `${opacity}`;
+    toolbar.style.background = `rgba(63, 81, 181, ${opacity})`;
+
+    // this.$.siteHeaderBar.positionTop = (pos <= 0) ? 0 : pos;
   },
 
   _onScroll(e) {

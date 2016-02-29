@@ -1,0 +1,22 @@
+<dom-module id="page-cv">
+  <template>
+    <style include="page-shared-styles">
+      paper-button > span {
+        vertical-align: middle;
+      }
+    </style>
+
+    <section>
+      <h2>Curriculum Vitae</h2>
+      <p>
+        Here as an abridged version of my <b>resumé</b>. The full version is available to download by clicking the button below.
+      </p>
+      <a target="_blank" href="https://drive.google.com/file/d/0B5pQBWLETDBkZUFFRWJ2bWxvNm8/view?usp=sharing"><paper-button raised>
+        <iron-icon icon="mdi:file-pdf"></iron-icon>
+        <span>Download PDF CV</span>
+      </paper-button></a>
+    </section>
+
+  </template>
+  <script src="page-cv.js" charset="utf-8"></script>
+</dom-module>
