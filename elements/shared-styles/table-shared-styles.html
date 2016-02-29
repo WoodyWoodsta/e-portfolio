@@ -1,0 +1,63 @@
+<dom-module id="table-shared-styles">
+  <template>
+    <style>
+    table {
+      border-collapse: collapse;
+    }
+
+    td,
+    th {
+      padding: 5px 8px;
+      vertical-align: top;
+    }
+
+    td:first-child {
+      font-weight: 500;
+      color: var(--primary-color);
+    }
+
+    td.no-emph {
+      font-weight: normal;
+      color: var(--dark-strong-alpha);
+    }
+
+    th {
+      padding-top: var(--container-padding);
+      padding-bottom: var(--container-padding);
+      color: var(--dark-medium-alpha);
+    }
+
+    td + td,
+    th + th {
+      border-left: 1px solid var(--divider-color);
+    }
+
+    tr.hover:hover {
+      background: var(--divider-color);
+    }
+
+    tr.divider {
+      border-bottom: 1px solid var(--divider-color-opaque);
+    }
+
+    tr.secondary > td {
+      font-size: 0.9rem;
+      font-weight: normal;
+      color: var(--dark-strong-alpha);
+    }
+
+    tr.tertiary > td {
+      font-size: 0.9rem;
+      font-weight: normal;
+      color: var(--dark-medium-alpha);
+    }
+
+    @media all and (max-width: 480px) {
+      table {
+        width: 100%;
+      }
+    }
+
+    </style>
+  </template>
+</dom-module>

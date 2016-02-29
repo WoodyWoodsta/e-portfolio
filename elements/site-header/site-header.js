@@ -36,7 +36,7 @@ Polymer({
     this._updateHeights();
 
     this.transform(`translateY(${window.scrollY/3}px)`, this.$.headerContent);
-    this.$.headerContent.style.opacity = `${(window.innerHeight - window.scrollY*1.2)/window.innerHeight}`;
+    this.$.headerContent.style.opacity = `${(this._headerHeight - window.scrollY*1.2)/this._headerHeight}`;
   },
 
   _updateHeaderBarStyle() {
