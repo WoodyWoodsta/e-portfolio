@@ -9,12 +9,32 @@
         color: var(--primary-color);
       }
 
+      p {
+        height: auto;
+      }
+
+      img {
+        display: inline-block;
+        float: right;
+        margin-left: 10px;
+      }
+
       section {
         padding: 20px;
+        overflow: auto;
       }
 
       section + section {
         border-top: 1px solid var(--divider-color);
+      }
+
+      @media all and (max-width: 600px) {
+        img {
+          float: none;
+          display: block;
+          margin: 10px auto;
+          text-align: center;
+        }
       }
     </style>
   </template>
