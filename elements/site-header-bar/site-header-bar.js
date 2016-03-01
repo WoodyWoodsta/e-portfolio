@@ -17,11 +17,13 @@ Polymer({
     'iron-activate': 'onIronActivate'
   },
 
-  attached() {
+  attached: function() {
     this.fire('iron-activate', {selected: 'homepage'});
   },
 
-  onIronActivate(e) {
+  onIronActivate: function(e) {
+    var self = this.onIronActivate;
+
     console.log('Getting here');
     switch (e.detail.selected) {
       case 'homepage':
@@ -35,9 +37,15 @@ Polymer({
         break;
       default:
     }
+
+    if (self.hasLoaded) {
+      window.EPPZScrollTo.scrollVerticalToElementById('siteContent', this.getBoundingClientRect().height);
+    } else {
+      self.hasLoaded = true;
+    }
   },
 
-  _onPositionTopChanged(newValue) {
+  _onPositionTopChanged: function(newValue) {
     this.style.top = `${newValue}px`;
   }
 });

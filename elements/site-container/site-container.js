@@ -8,11 +8,11 @@ Polymer({
     'site-activate': 'onSiteActivate'
   },
 
-  onSiteActivate(e) {
+  onSiteActivate: function(e) {
     console.log(e);
   },
-  
-  onIronActivate(e) {
+
+  onIronActivate: function(e) {
     this.getContentChildNodes()[3].pageSelected = e.detail.selected;
   }
 });

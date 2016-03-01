@@ -17,29 +17,29 @@ Polymer({
     }
   },
 
-  attached() {
+  attached: function() {
     window.addEventListener('scroll', this._onScroll.bind(this));
     this._updateHeaderBarStyle();
     this._updateHeaderContentStyle();
   },
 
-  detached() {
+  detached: function() {
     window.removeEventListener('scroll', this._onScroll.bind(this));
   },
 
-  _updateHeights() {
+  _updateHeights: function() {
     this._headerBarHeight = this.$.siteHeaderBar.getBoundingClientRect().height;
     this._headerHeight = this.getBoundingClientRect().height;
   },
 
-  _updateHeaderContentStyle() {
+  _updateHeaderContentStyle: function() {
     this._updateHeights();
 
     this.transform(`translateY(${window.scrollY/3}px)`, this.$.headerContent);
     this.$.headerContent.style.opacity = `${(this._headerHeight - window.scrollY*1.2)/this._headerHeight}`;
   },
 
-  _updateHeaderBarStyle() {
+  _updateHeaderBarStyle: function() {
     var headerBarBottom = this.getBoundingClientRect().bottom;
     var pos = headerBarBottom - this._headerBarHeight;
     this._updateHeights();
@@ -56,7 +56,7 @@ Polymer({
     // this.$.siteHeaderBar.positionTop = (pos <= 0) ? 0 : pos;
   },
 
-  _onScroll(e) {
+  _onScroll: function(e) {
     this._updateHeaderContentStyle();
     this._updateHeaderBarStyle();
   }
