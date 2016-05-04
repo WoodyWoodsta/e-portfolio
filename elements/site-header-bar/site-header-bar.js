@@ -27,13 +27,16 @@ Polymer({
     console.log('Getting here');
     switch (e.detail.selected) {
       case 'homepage':
-        this.titleText = `me.e-portfolio.homepage`;
+        this.titleText = 'me.e-portfolio.homepage';
         break;
       case 'cv':
-        this.titleText = `me.e-portfolio.cv`;
+        this.titleText = 'me.e-portfolio.cv';
         break;
       case 'social':
-        this.titleText = `me.e-portfolio.social`;
+        this.titleText = 'me.e-portfolio.social';
+        break;
+      case 'nvp':
+        this.titleText = 'me.e-portfolio.nvp';
         break;
       default:
     }

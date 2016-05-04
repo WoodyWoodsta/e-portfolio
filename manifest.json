@@ -1,0 +1,11 @@
+{
+  "app": {
+    "background": { }
+  },
+  "manifest_version": 2,
+  "name": "Sean Wood | ePortfolio",
+  "version": "v0.1.1",
+
+  "description": "An online portfolio for me, Sean Wood",
+  "author": "Sean Wood, University of Cape Town"
+}

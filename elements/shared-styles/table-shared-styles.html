@@ -7,6 +7,7 @@
 
     td,
     th {
+      width: auto;
       padding: 5px 8px;
       vertical-align: top;
     }
@@ -25,6 +26,8 @@
       padding-top: var(--container-padding);
       padding-bottom: var(--container-padding);
       color: var(--dark-medium-alpha);
+
+      text-align: left;
     }
 
     td + td,
@@ -50,6 +53,11 @@
       font-size: 0.9rem;
       font-weight: normal;
       color: var(--dark-medium-alpha);
+    }
+
+    th.right,
+    td.right {
+      text-align: right;
     }
 
     @media all and (max-width: 480px) {
